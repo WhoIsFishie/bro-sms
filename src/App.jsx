@@ -37,7 +37,7 @@ function AppContent() {
 
 function App() {
   return (
-    <ThemeProvider storageKey="bro-sms-theme">
+    <ThemeProvider storageKey="sms-visualizer-theme">
       <AppProvider>
         <AppContent />
       </AppProvider>

@@ -91,11 +91,11 @@ export function AppProvider({ children }) {
     // Check URL path first
     const pathSegments = urlPath.split('/').filter(segment => segment !== '')
 
-    // For GitHub Pages: /bro-sms/[pastebinkey] or direct /[pastebinkey]
-    if (pathSegments.length >= 2 && pathSegments[0] === 'bro-sms') {
-      // Format: /bro-sms/pastebinkey
+    // For GitHub Pages: /sms-visualizer/[pastebinkey] or direct /[pastebinkey]
+    if (pathSegments.length >= 2 && pathSegments[0] === 'sms-visualizer') {
+      // Format: /sms-visualizer/pastebinkey
       pastebinKey = pathSegments[1]
-    } else if (pathSegments.length === 1 && pathSegments[0] !== 'bro-sms') {
+    } else if (pathSegments.length === 1 && pathSegments[0] !== 'sms-visualizer') {
       // Format: /pastebinkey (direct)
       pastebinKey = pathSegments[0]
     }

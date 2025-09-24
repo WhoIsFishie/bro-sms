@@ -5,7 +5,7 @@ const ThemeContext = createContext({
   setTheme: () => null,
 })
 
-export function ThemeProvider({ children, storageKey = 'bro-sms-theme', ...props }) {
+export function ThemeProvider({ children, storageKey = 'sms-visualizer-theme', ...props }) {
   const [theme, setTheme] = useState(() => {
     if (typeof window !== 'undefined') {
       const savedTheme = localStorage.getItem(storageKey)
