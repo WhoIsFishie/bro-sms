@@ -18,6 +18,7 @@ export interface NormalizedStats {
   phoneVariations: { [normalizedPhone: string]: string[] };
 }
 
+// Legacy SMS Record format (keep for backward compatibility)
 export interface SMSRecord {
   id: number;
   folder: string;
@@ -34,6 +35,22 @@ export interface SMSRecord {
   message: string;
   deleted: null | string;
 }
+
+// New unified data record format
+export interface DataRecord {
+  ID: string;
+  Type: 'SMS Messages' | 'Calendar' | 'Call Log' | 'Instant Messages' | string;
+  Direction: 'From' | 'To' | '';
+  Attachments: string;
+  Locations: string;
+  Timestamp: string; // Format: "13/06/2014 21:15:08(UTC+0)"
+  Party: string; // Format: "From: +9607781405" or "" for calendar
+  Description: string; // Message content or event description
+  Deleted: string;
+}
+
+// Union type for both old and new formats
+export type UnifiedRecord = SMSRecord | DataRecord;
 
 export interface Contact {
   phone: string;
@@ -54,4 +71,5 @@ export interface Message {
   isFromMe: boolean;
   isRead: boolean;
   status?: MessageStatus;
+  isCallLog?: boolean;
 }

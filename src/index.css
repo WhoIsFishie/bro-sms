@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 /* Custom utilities */
 .line-clamp-2 {
@@ -15,4 +16,50 @@ input[type="file"] {
 
 input[type="file"]::-webkit-file-upload-button {
   margin-right: 0.5rem;
+}
+
+/* Custom scrollbar styling for MessageThread */
+.ReactVirtualized__Grid {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+}
+
+.ReactVirtualized__Grid::-webkit-scrollbar {
+  width: 8px;
+}
+
+.ReactVirtualized__Grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ReactVirtualized__Grid::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+.dark .ReactVirtualized__Grid::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Custom scrollbar styling for ContactList */
+.contact-list-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+}
+
+.contact-list-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.contact-list-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.contact-list-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+.dark .contact-list-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
 }
